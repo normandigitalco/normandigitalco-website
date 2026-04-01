@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Norman Digital — Modern Websites for DFW Businesses</title>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Cormorant:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --black: #0a0a0a;
+    --white: #fafafa;
+    --gray-100: #f2f2f2;
+    --gray-200: #e0e0e0;
+    --gray-400: #999;
+    --gray-600: #555;
+    --accent: #0a0a0a;
+    --serif: 'Instrument Serif', Georgia, serif;
+    --sans: 'Cormorant', Georgia, serif;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: var(--sans);
+    background: var(--white);
+    color: var(--gray-600);
+    font-size: 18px;
+    line-height: 1.7;
+    overflow-x: hidden;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.25rem 2.5rem;
+    background: rgba(250,250,250,0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--gray-200);
+  }
+
+  .nav-logo {
+    font-family: var(--serif);
+    font-size: 1.3rem;
+    letter-spacing: -0.01em;
+    color: var(--gray-600);
+    text-decoration: none;
+  }
+
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    list-style: none;
+  }
+
+  .nav-links a {
+    font-size: 0.875rem;
+    font-weight: 400;
+    color: var(--gray-400);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .nav-links a:hover { color: var(--gray-600); }
+
+  .nav-cta {
+    background: var(--black) !important;
+    color: var(--white) !important;
+    padding: 0.5rem 1.25rem !important;
+    border-radius: 2rem !important;
+    font-size: 0.875rem !important;
+    transition: opacity 0.2s !important;
+  }
+
+  .nav-cta:hover { opacity: 0.8 !important; }
+
+  /* HERO */
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 8rem 2.5rem 4rem;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .hero-eyebrow {
+    font-size: 0.8rem;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--gray-400);
+    margin-bottom: 1.5rem;
+    opacity: 0;
+    animation: fadeUp 0.8s ease forwards 0.2s;
+  }
+
+  .hero h1 {
+    font-family: var(--serif);
+    font-size: clamp(3rem, 7vw, 6rem);
+    font-weight: 400;
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    margin-bottom: 1.5rem;
+    color: var(--gray-600);
+    opacity: 0;
+    animation: fadeUp 0.8s ease forwards 0.4s;
+  }
+
+  .hero h1 em {
+    font-style: italic;
+    color: var(--gray-400);
+  }
+
+  .hero-sub {
+    font-size: 1.1rem;
+    font-weight: 300;
+    color: var(--gray-600);
+    max-width: 520px;
+    margin-bottom: 2.5rem;
+    opacity: 0;
+    animation: fadeUp 0.8s ease forwards 0.6s;
+  }
+
+  .hero-actions {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    opacity: 0;
+    animation: fadeUp 0.8s ease forwards 0.8s;
+  }
+
+  .btn-primary {
+    background: var(--black);
+    color: var(--white);
+    padding: 0.875rem 2rem;
+    border-radius: 2rem;
+    font-size: 0.9rem;
+    font-weight: 500;
+    text-decoration: none;
+    transition: opacity 0.2s;
+  }
+
+  .btn-primary:hover { opacity: 0.75; }
+
+  .btn-secondary {
+    font-size: 0.9rem;
+    color: var(--gray-600);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    transition: color 0.2s;
+  }
+
+  .btn-secondary:hover { color: var(--black); }
+
+  .hero-divider {
+    width: 100%;
+    height: 1px;
+    background: var(--gray-200);
+    margin-top: 4rem;
+    opacity: 0;
+    animation: fadeUp 0.8s ease forwards 1s;
+  }
+
+  /* SECTIONS */
+  section {
+    padding: 6rem 2.5rem;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .section-label {
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--gray-400);
+    margin-bottom: 1rem;
+  }
+
+  .section-title {
+    font-family: var(--serif);
+    font-size: clamp(2rem, 4vw, 3.2rem);
+    font-weight: 400;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    margin-bottom: 1rem;
+    color: var(--gray-600);
+  }
+
+  .section-sub {
+    font-size: 1rem;
+    color: var(--gray-600);
+    font-weight: 300;
+    max-width: 480px;
+    margin-bottom: 3.5rem;
+  }
+
+  /* SERVICES */
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1px;
+    background: var(--gray-200);
+    border: 1px solid var(--gray-200);
+  }
+
+  .service-card {
+    background: var(--white);
+    padding: 2rem;
+    transition: background 0.2s;
+  }
+
+  .service-card:hover { background: var(--gray-100); }
+
+  .service-num {
+    font-size: 0.75rem;
+    color: var(--gray-400);
+    margin-bottom: 1.5rem;
+    font-weight: 500;
+  }
+
+  .service-name {
+    font-family: var(--serif);
+    font-size: 1.25rem;
+    margin-bottom: 0.75rem;
+    font-weight: 400;
+    color: var(--gray-600);
+  }
+
+  .service-desc {
+    font-size: 0.875rem;
+    color: var(--gray-600);
+    font-weight: 300;
+    line-height: 1.6;
+  }
+
+  /* HOW IT WORKS */
+  #how { background: var(--black); max-width: 100%; padding: 6rem 2.5rem; }
+
+  #how .inner {
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  #how .section-label { color: #555; }
+  #how .section-title { color: var(--white); }
+  #how .section-sub { color: #777; }
+
+  .steps {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    margin-top: 1rem;
+  }
+
+  .step {
+    border-top: 1px solid #222;
+    padding-top: 1.5rem;
+  }
+
+  .step-num {
+    font-size: 0.75rem;
+    color: #444;
+    font-weight: 500;
+    margin-bottom: 1rem;
+  }
+
+  .step-title {
+    font-family: var(--serif);
+    font-size: 1.15rem;
+    color: #aaa;
+    margin-bottom: 0.5rem;
+    font-weight: 400;
+  }
+
+  .step-desc {
+    font-size: 0.875rem;
+    color: #666;
+    font-weight: 300;
+    line-height: 1.6;
+  }
+
+  /* ABOUT */
+  .about-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    align-items: center;
+  }
+
+  .about-text p {
+    font-size: 1rem;
+    color: var(--gray-600);
+    font-weight: 300;
+    margin-bottom: 1rem;
+    line-height: 1.8;
+  }
+
+  .about-stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1px;
+    background: var(--gray-200);
+    border: 1px solid var(--gray-200);
+  }
+
+  .stat {
+    background: var(--white);
+    padding: 1.75rem;
+  }
+
+  .stat-num {
+    font-family: var(--serif);
+    font-size: 2.5rem;
+    line-height: 1;
+    margin-bottom: 0.5rem;
+    color: var(--gray-600);
+  }
+
+  .stat-label {
+    font-size: 0.8rem;
+    color: var(--gray-400);
+    font-weight: 400;
+  }
+
+  /* CONTACT */
+  #contact { background: var(--gray-100); max-width: 100%; padding: 6rem 2.5rem; }
+
+  #contact .inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    align-items: start;
+  }
+
+  #contact .section-title { margin-bottom: 0.75rem; }
+  #contact .section-sub { margin-bottom: 1.5rem; }
+
+  .contact-detail {
+    font-size: 0.875rem;
+    color: var(--gray-600);
+    margin-bottom: 0.5rem;
+  }
+
+  .contact-detail a {
+    color: var(--gray-600);
+    text-decoration: none;
+    font-weight: 500;
+  }
+
+  .contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+
+  .form-group label {
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: var(--gray-600);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+
+  .form-group input,
+  .form-group textarea,
+  .form-group select {
+    background: var(--white);
+    border: 1px solid var(--gray-200);
+    border-radius: 0.5rem;
+    padding: 0.75rem 1rem;
+    font-family: var(--sans);
+    font-size: 0.9rem;
+    color: var(--gray-600);
+    outline: none;
+    transition: border-color 0.2s;
+    width: 100%;
+  }
+
+  .form-group input:focus,
+  .form-group textarea:focus,
+  .form-group select:focus {
+    border-color: var(--gray-600);
+  }
+
+  .form-group textarea { min-height: 120px; resize: vertical; }
+
+  .form-submit {
+    background: var(--black);
+    color: var(--white);
+    border: none;
+    padding: 0.875rem 2rem;
+    border-radius: 2rem;
+    font-family: var(--sans);
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: opacity 0.2s;
+    align-self: flex-start;
+  }
+
+  .form-submit:hover { opacity: 0.75; }
+
+  /* FOOTER */
+  footer {
+    padding: 2rem 2.5rem;
+    border-top: 1px solid var(--gray-200);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .footer-logo {
+    font-family: var(--serif);
+    font-size: 1rem;
+    color: var(--gray-600);
+    text-decoration: none;
+  }
+
+  .footer-copy {
+    font-size: 0.8rem;
+    color: var(--gray-400);
+  }
+
+  /* ANIMATIONS */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+    .reveal {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+
+  .reveal.hidden {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+
+  /* MOBILE */
+  @media (max-width: 768px) {
+    nav { padding: 1rem 1.25rem; }
+    .nav-links { display: none; }
+    .hero { padding: 7rem 1.25rem 3rem; }
+    section { padding: 4rem 1.25rem; }
+    #how, #contact { padding: 4rem 1.25rem; }
+    .about-layout { grid-template-columns: 1fr; gap: 2.5rem; }
+    #contact .inner { grid-template-columns: 1fr; gap: 2.5rem; }
+    .form-row { grid-template-columns: 1fr; }
+    footer { flex-direction: column; gap: 0.5rem; text-align: center; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-logo">Norman Digital</a>
+  <ul class="nav-links">
+    <li><a href="#services">Services</a></li>
+    <li><a href="#how">How it works</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#contact" class="nav-cta">Get in touch</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <p class="hero-eyebrow">Frisco, TX &nbsp;·&nbsp; DFW Web Design</p>
+  <h1>Modern websites<br>for DFW businesses,<br><em>built fast.</em></h1>
+  <p class="hero-sub">We build clean, professional websites for local businesses across Frisco, Plano, Allen, and McKinney — so you can focus on running your business.</p>
+  <div class="hero-actions">
+    <a href="#contact" class="btn-primary">Start a project</a>
+    <a href="#services" class="btn-secondary">See what we do →</a>
+  </div>
+  <div class="hero-divider"></div>
+</div>
+
+<!-- SERVICES -->
+<section id="services">
+  <p class="section-label reveal">What we do</p>
+  <h2 class="section-title reveal">Everything you need<br>to get online.</h2>
+  <p class="section-sub reveal">No tech knowledge required on your end. We handle it all.</p>
+  <div class="services-grid reveal">
+    <div class="service-card">
+      <p class="service-num">01</p>
+      <h3 class="service-name">Website Design & Development</h3>
+      <p class="service-desc">Custom 5-page websites built for local DFW businesses. Clean, fast, and mobile-friendly.</p>
+    </div>
+    <div class="service-card">
+      <p class="service-num">02</p>
+      <h3 class="service-name">Monthly Maintenance</h3>
+      <p class="service-desc">Monthly updates, security checks, and peace of mind. Your site stays fresh — hands-free.</p>
+    </div>
+    <div class="service-card">
+      <p class="service-num">03</p>
+      <h3 class="service-name">Domain & Hosting Setup</h3>
+      <p class="service-desc">We handle everything from domain purchase to go-live. You get a real URL, not a link.</p>
+    </div>
+    <div class="service-card">
+      <p class="service-num">04</p>
+      <h3 class="service-name">Contact Form & Maps Integration</h3>
+      <p class="service-desc">So your customers can find and reach you easily — directly from your website.</p>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<div id="how">
+  <div class="inner">
+    <p class="section-label reveal">The process</p>
+    <h2 class="section-title reveal">Simple from start<br>to launch.</h2>
+    <p class="section-sub reveal">Most sites are live within a few days of your first conversation with us.</p>
+    <div class="steps">
+      <div class="step reveal">
+        <p class="step-num">Step 01</p>
+        <h3 class="step-title">You fill out our intake form</h3>
+        <p class="step-desc">Tell us about your business — your services, hours, vibe. Takes about 5 minutes.</p>
+      </div>
+      <div class="step reveal">
+        <p class="step-num">Step 02</p>
+        <h3 class="step-title">We build your site</h3>
+        <p class="step-desc">We design and build your full website. You'll see a preview before anything goes live.</p>
+      </div>
+      <div class="step reveal">
+        <p class="step-num">Step 03</p>
+        <h3 class="step-title">You review and approve</h3>
+        <p class="step-desc">We walk you through the site and make any changes you need until it's exactly right.</p>
+      </div>
+      <div class="step reveal">
+        <p class="step-num">Step 04</p>
+        <h3 class="step-title">Your site goes live</h3>
+        <p class="step-desc">We connect your domain and launch. Your business is officially online.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="about-layout">
+    <div class="about-text">
+      <p class="section-label reveal">About</p>
+      <h2 class="section-title reveal">Built for DFW<br>small businesses.</h2>
+      <p class="reveal">Norman Digital is a web design agency based in Frisco, TX. We work exclusively with local small businesses across the DFW area — restaurants, salons, contractors, and everyone in between.</p>
+      <p class="reveal">Our goal is simple: get your business online with a site that looks great, works on every device, and actually brings in customers. No bloated agency fees, no tech headaches.</p>
+    </div>
+    <div class="about-stats reveal">
+      <div class="stat">
+        <p class="stat-num">5</p>
+        <p class="stat-label">Pages, fully custom</p>
+      </div>
+      <div class="stat">
+        <p class="stat-num">48h</p>
+        <p class="stat-label">Average turnaround</p>
+      </div>
+      <div class="stat">
+        <p class="stat-num">$0</p>
+        <p class="stat-label">Hidden fees</p>
+      </div>
+      <div class="stat">
+        <p class="stat-num">DFW</p>
+        <p class="stat-label">Local, always</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<div id="contact">
+  <div class="inner">
+    <div>
+      <p class="section-label reveal">Contact</p>
+      <h2 class="section-title reveal">Let's build<br>something.</h2>
+      <p class="section-sub reveal">Fill out the form and we'll get back to you within 24 hours.</p>
+      <p class="contact-detail reveal">Email: <a href="/cdn-cgi/l/email-protection#7e10110c131f101a1719170a1f121d113e19131f1712501d1113"><span class="__cf_email__" data-cfemail="a9c7c6dbc4c8c7cdc0cec0ddc8c5cac6e9cec4c8c0c587cac6c4">[email&#160;protected]</span></a></p>
+      <p class="contact-detail reveal" style="margin-top: 0.25rem;">Based in Frisco, TX — serving all of DFW</p>
+    </div>
+    <form class="contact-form reveal" action="https://formspree.io/f/mreolqjw" method="POST">
+      <div class="form-row">
+        <div class="form-group">
+          <label>Your name</label>
+          <input type="text" name="name" placeholder="Jane Smith" required>
+        </div>
+        <div class="form-group">
+          <label>Business name</label>
+          <input type="text" name="business" placeholder="Smith's Salon">
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Email</label>
+        <input type="email" name="email" placeholder="jane@yourshop.com" required>
+      </div>
+      <div class="form-group">
+        <label>What do you need?</label>
+        <select name="service">
+          <option value="">Select a service</option>
+          <option>New website</option>
+          <option>Website redesign</option>
+          <option>Monthly maintenance</option>
+          <option>Something else</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Tell us about your business</label>
+        <textarea name="message" placeholder="What does your business do, where are you located, and what are you looking for?"></textarea>
+      </div>
+      <button type="submit" class="form-submit">Send message →</button>
+    </form>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <a href="#" class="footer-logo">Norman Digital</a>
+  <p class="footer-copy">© 2026 Norman Digital. Frisco, TX.</p>
+</footer>
+
+<script data-cfasync="f
