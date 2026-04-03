@@ -4,10 +4,10 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Norman Digital — Modern Websites for DFW Businesses</title>
-<link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=DM+Sans:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=DM+Sans:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
-<!-- FAVICON: Concept 1 N icon as SVG favicon -->
-<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='4' fill='%230a0a0a'/><polyline points='7,24 7,8 16,20 25,8 25,24' fill='none' stroke='white' stroke-width='2.5' stroke-linecap='square' stroke-linejoin='miter'/><rect x='22' y='6' width='4' height='4' fill='%233B82F6'/></svg>">
+<!-- FAVICON -->
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='4' fill='%230a0a0a'/%3E%3Cline x1='8' y1='24' x2='8' y2='8' stroke='white' stroke-width='2.5' stroke-linecap='square'/%3E%3Cline x1='8' y1='8' x2='24' y2='24' stroke='white' stroke-width='2.5' stroke-linecap='square'/%3E%3Cline x1='24' y1='24' x2='24' y2='8' stroke='white' stroke-width='2.5' stroke-linecap='square'/%3E%3Crect x='20' y='6' width='5' height='5' fill='%233B82F6'/%3E%3C/svg%3E">
 
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -21,7 +21,7 @@
   --gray-600: #555;
   --accent: #3B82F6;
   --accent-dark: #1d4ed8;
-  --serif: 'Syne', Georgia, sans-serif;
+  --serif: 'Plus Jakarta Sans', system-ui, sans-serif;
   --sans: 'Inter', system-ui, sans-serif;
   --display: 'DM Sans', system-ui, sans-serif;
 }
@@ -218,9 +218,9 @@ nav.scrolled { box-shadow: 0 2px 20px rgba(0,0,0,0.06); }
 
 .hero h1 {
   font-family: var(--serif);
-  font-size: clamp(3rem, 7vw, 5.5rem);
+  font-size: clamp(2.6rem, 5.5vw, 4.5rem);
   font-weight: 800;
-  line-height: 1.0;
+  line-height: 1.05;
   letter-spacing: -0.03em;
   color: var(--black);
   margin-bottom: 1.5rem;
@@ -1097,28 +1097,30 @@ footer {
 
 <!-- NAV -->
 <nav id="main-nav">
-  <a href="#" class="nav-logo" onclick="showPage('home'); return false;">
+  <a href="#" class="nav-logo" data-page="home">
     <div class="nav-logo-icon">
       <svg viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <polyline points="3,18 3,4 19,18 19,4" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="square" stroke-linejoin="miter"/>
-        <rect x="15.5" y="2.5" width="4" height="4" fill="#3B82F6"/>
+        <line x1="4" y1="18" x2="4" y2="4" stroke="white" stroke-width="2.5" stroke-linecap="square"/>
+        <line x1="4" y1="4" x2="18" y2="18" stroke="white" stroke-width="2.5" stroke-linecap="square"/>
+        <line x1="18" y1="18" x2="18" y2="4" stroke="white" stroke-width="2.5" stroke-linecap="square"/>
+        <rect x="14.5" y="2.5" width="4" height="4" fill="#3B82F6"/>
       </svg>
     </div>
     <span class="nav-logo-name">Norman <span>Digital</span></span>
   </a>
 
   <ul class="nav-center">
-    <li><a href="#" onclick="showPage('home'); return false;" data-page="home" class="active">Home</a></li>
-    <li><a href="#" onclick="showPage('about'); return false;" data-page="about">About</a></li>
-    <li><a href="#" onclick="showPage('services'); return false;" data-page="services">Services</a></li>
-    <li><a href="#" onclick="showPage('pricing'); return false;" data-page="pricing">Pricing</a></li>
-    <li><a href="#" onclick="showPage('contact'); return false;" data-page="contact">Contact</a></li>
+    <li><a href="#" data-page="home" class="active">Home</a></li>
+    <li><a href="#" data-page="about">About</a></li>
+    <li><a href="#" data-page="services">Services</a></li>
+    <li><a href="#" data-page="pricing">Pricing</a></li>
+    <li><a href="#" data-page="contact">Contact</a></li>
   </ul>
 
   <div class="nav-right">
     
-    <a href="#" onclick="showPage('contact'); return false;" class="nav-cta">Request a Quote</a>
-    <button class="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="Menu">
+    <a href="#" data-page="contact" class="nav-cta">Request a Quote</a>
+    <button class="mobile-menu-btn"  aria-label="Menu">
       <span></span><span></span><span></span>
     </button>
   </div>
@@ -1126,11 +1128,11 @@ footer {
 
 <!-- MOBILE NAV -->
 <div class="mobile-nav" id="mobile-nav">
-  <a href="#" onclick="showPage('home'); closeMobileMenu(); return false;">Home</a>
-  <a href="#" onclick="showPage('about'); closeMobileMenu(); return false;">About</a>
-  <a href="#" onclick="showPage('services'); closeMobileMenu(); return false;">Services</a>
-  <a href="#" onclick="showPage('pricing'); closeMobileMenu(); return false;">Pricing</a>
-  <a href="#" onclick="showPage('contact'); closeMobileMenu(); return false;">Contact</a>
+  <a href="#" data-page="home">Home</a>
+  <a href="#" data-page="about">About</a>
+  <a href="#" data-page="services">Services</a>
+  <a href="#" data-page="pricing">Pricing</a>
+  <a href="#" data-page="contact">Contact</a>
 </div>
 
 <!-- ═══════════════════════════════════════════ -->
@@ -1143,8 +1145,8 @@ footer {
     <h1>Modern websites<br>for DFW businesses,<br><em>built fast.</em></h1>
     <p class="hero-sub">We build clean, professional websites for local businesses across Frisco, Plano, Allen, and McKinney — so you can focus on running your business.</p>
     <div class="hero-actions">
-      <button class="btn-primary" onclick="showPage('contact')">Start a Project</button>
-      <button class="btn-secondary" onclick="showPage('services')">See what we do →</button>
+      <button class="btn-primary" data-page="contact">Start a Project</button>
+      <button class="btn-secondary" data-page="services">See what we do →</button>
     </div>
     <div class="hero-divider"></div>
   </div>
@@ -1238,7 +1240,7 @@ footer {
   </div>
 
   <footer>
-    <a href="#" class="footer-logo" onclick="showPage('home'); return false;">Norman Digital</a>
+    <a href="#" class="footer-logo" data-page="home">Norman Digital</a>
     <p class="footer-copy">© 2026 Norman Digital. Frisco, TX.</p>
   </footer>
 </div>
@@ -1257,7 +1259,7 @@ footer {
       <p>Our goal is simple: get your business online with a site that <strong>looks great, works on every device, and actually brings in customers.</strong> We handle everything from design and development to domain setup and launch.</p>
       <p>We treat your business like it's our own.</p>
       <br>
-      <button class="btn-primary" onclick="showPage('contact')">Work with us →</button>
+      <button class="btn-primary" data-page="contact">Work with us →</button>
     </div>
     <div class="about-photo-placeholder">
       <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -1289,7 +1291,7 @@ footer {
   </div>
 
   <footer>
-    <a href="#" class="footer-logo" onclick="showPage('home'); return false;">Norman Digital</a>
+    <a href="#" class="footer-logo" data-page="home">Norman Digital</a>
     <p class="footer-copy">© 2026 Norman Digital. Frisco, TX.</p>
   </footer>
 </div>
@@ -1383,7 +1385,7 @@ footer {
   </div>
 
   <footer>
-    <a href="#" class="footer-logo" onclick="showPage('home'); return false;">Norman Digital</a>
+    <a href="#" class="footer-logo" data-page="home">Norman Digital</a>
     <p class="footer-copy">© 2026 Norman Digital. Frisco, TX.</p>
   </footer>
 </div>
@@ -1422,7 +1424,7 @@ footer {
         <li><span class="check">✓</span> Monthly content update (1 revision)</li>
         <li><span class="check">✓</span> Basic analytics dashboard</li>
       </ul>
-      <button class="pricing-btn pricing-btn-outline" onclick="showPage('contact')">Get Started</button>
+      <button class="pricing-btn pricing-btn-outline" data-page="contact">Get Started</button>
     </div>
 
     <!-- Growth — Featured -->
@@ -1448,7 +1450,7 @@ footer {
         <li><span class="check">✓</span> Google Analytics + Search Console</li>
         <li><span class="check">✓</span> Social media links + open graph</li>
       </ul>
-      <button class="pricing-btn pricing-btn-white" onclick="showPage('contact')">Get Started</button>
+      <button class="pricing-btn pricing-btn-white" data-page="contact">Get Started</button>
     </div>
 
     <!-- Premium -->
@@ -1474,18 +1476,18 @@ footer {
         <li><span class="check">✓</span> Priority support & response</li>
         <li><span class="check">✓</span> Logo design included</li>
       </ul>
-      <button class="pricing-btn pricing-btn-dark" onclick="showPage('contact')">Get Started</button>
+      <button class="pricing-btn pricing-btn-dark" data-page="contact">Get Started</button>
     </div>
 
   </div>
 
   <div class="pricing-note">
     <div class="pricing-note-badge">🔒 Transparent — No Hidden Fees</div>
-    <p>All plans include a free consultation. Not sure which plan fits? <a href="#" onclick="showPage('contact'); return false;" style="color: var(--black); font-weight:500;">Let's talk</a> — we'll find the right fit for your business and your budget.</p>
+    <p>All plans include a free consultation. Not sure which plan fits? <a href="#" data-page="contact" style="color: var(--black); font-weight:500;">Let's talk</a> — we'll find the right fit for your business and your budget.</p>
   </div>
 
   <footer>
-    <a href="#" class="footer-logo" onclick="showPage('home'); return false;">Norman Digital</a>
+    <a href="#" class="footer-logo" data-page="home">Norman Digital</a>
     <p class="footer-copy">© 2026 Norman Digital. Frisco, TX.</p>
   </footer>
 </div>
@@ -1499,7 +1501,7 @@ footer {
       <p class="section-label">Contact</p>
       <h1 class="section-title">Let's build<br>something.</h1>
       <p class="section-sub">Fill out the form and we'll get back to you within 24 hours. No pressure, just a real conversation about your business.</p>
-      <p class="contact-detail">Email: <a href="mailto:normandigitalco@gmail.com">normandigitalco@gmail.com</a></p>
+      <p class="contact-detail">Email: <a href="/cdn-cgi/l/email-protection#99f7f6ebf4f8f7fdf0fef0edf8f5faf6d9fef4f8f0f5b7faf6f4"><span class="__cf_email__" data-cfemail="95fbfae7f8f4fbf1fcf2fce1f4f9f6fad5f2f8f4fcf9bbf6faf8">[email&#160;protected]</span></a></p>
       <p class="contact-detail" style="margin-top: 0.35rem;">Based in Frisco, TX — serving all of DFW</p>
     </div>
     <form class="contact-form" action="https://formspree.io/f/mreolqjw" method="POST">
@@ -1538,52 +1540,64 @@ footer {
   </div>
 
   <footer>
-    <a href="#" class="footer-logo" onclick="showPage('home'); return false;">Norman Digital</a>
+    <a href="#" class="footer-logo" data-page="home">Norman Digital</a>
     <p class="footer-copy">© 2026 Norman Digital. Frisco, TX.</p>
   </footer>
 </div>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-let currentPage = 'home';
+<script>
+(function() {
+  var currentPage = 'home';
 
-function showPage(name) {
-  if (name === currentPage) return;
+  function showPage(name) {
+    if (name === currentPage) return;
+    var current = document.getElementById('page-' + currentPage);
+    var next = document.getElementById('page-' + name);
+    if (!current || !next) return;
 
-  const current = document.getElementById('page-' + currentPage);
-  const next = document.getElementById('page-' + name);
+    current.classList.add('exit');
 
-  if (!next) return;
+    setTimeout(function() {
+      current.classList.remove('active', 'exit');
+      current.scrollTop = 0;
+      next.classList.add('active');
+      next.scrollTop = 0;
+      currentPage = name;
+    }, 220);
 
-  current.classList.add('exit');
+    // Only update active highlight on nav-center links
+    document.querySelectorAll('.nav-center a[data-page]').forEach(function(el) {
+      el.classList.toggle('active', el.dataset.page === name);
+    });
 
-  setTimeout(() => {
-    current.classList.remove('active', 'exit');
-    current.scrollTop = 0;
-    next.classList.add('active');
-    next.scrollTop = 0;
-    currentPage = name;
-  }, 200);
-
-  // Update nav active state
-  document.querySelectorAll('.nav-center a').forEach(a => {
-    a.classList.toggle('active', a.dataset.page === name);
-  });
-}
-
-// Nav scroll shadow
-window.addEventListener('scroll', () => {
-  const activePage = document.getElementById('page-' + currentPage);
-  if (activePage && activePage.scrollTop > 10) {
-    document.getElementById('main-nav').classList.add('scrolled');
-  } else {
-    document.getElementById('main-nav').classList.remove('scrolled');
+    var mobileNav = document.getElementById('mobile-nav');
+    if (mobileNav) mobileNav.classList.remove('open');
   }
-}, { passive: true });
 
-// Listen to scroll on each page for nav shadow
-document.querySelectorAll('.page').forEach(page => {
-  page.addEventListener('scroll', () => {
-    if (page.classList.contains('active')) {
-      document.getElementById('main-nav').classList.toggle('scrolled', page.scrollTop > 10);
+  // Wire up ALL data-page clicks across the whole page
+  document.addEventListener('click', function(e) {
+    var el = e.target.closest('[data-page]');
+    if (el) {
+      e.preventDefault();
+      showPage(el.dataset.page);
+      return;
     }
-  },
+    // Mobile menu toggle
+    if (e.target.closest('.mobile-menu-btn')) {
+      var mn = document.getElementById('mobile-nav');
+      if (mn) mn.classList.toggle('open');
+    }
+  });
+
+  // Nav scroll shadow
+  document.querySelectorAll('.page').forEach(function(page) {
+    page.addEventListener('scroll', function() {
+      if (page.classList.contains('active')) {
+        document.getElementById('main-nav').classList.toggle('scrolled', page.scrollTop > 10);
+      }
+    }, { passive: true });
+  });
+})();
+</script>
+</body>
+</html>
