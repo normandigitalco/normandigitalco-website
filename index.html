@@ -3,7 +3,68 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Norman Digital — Modern Websites for DFW Businesses</title>
+
+<!-- Google Analytics -->
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-H9DW5S1WET"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-H9DW5S1WET');
+</script>
+
+<!-- Primary Meta Tags -->
+<title>Norman Digital — Web Design Agency | Frisco, TX | DFW Small Businesses</title>
+<meta name="title" content="Norman Digital — Web Design Agency | Frisco, TX | DFW Small Businesses">
+<meta name="description" content="Norman Digital builds fast, professional websites for small businesses across Frisco, Plano, Allen, McKinney, and the DFW area. Starting at $400. No hidden fees.">
+<meta name="keywords" content="web design Frisco TX, web design DFW, small business website Frisco, website designer Plano, web designer Allen TX, McKinney web design, DFW web design agency, affordable website design Texas">
+<meta name="author" content="Norman Digital">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://normandigitalco.com">
+
+<!-- Open Graph / Facebook / iMessage previews -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://normandigitalco.com">
+<meta property="og:title" content="Norman Digital — Modern Websites for DFW Businesses">
+<meta property="og:description" content="Fast, professional websites for DFW small businesses. Starting at $400. Based in Frisco, TX.">
+<meta property="og:image" content="https://normandigitalco.com/images/og-image.png">
+<meta property="og:site_name" content="Norman Digital">
+<meta property="og:locale" content="en_US">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:url" content="https://normandigitalco.com">
+<meta name="twitter:title" content="Norman Digital — Modern Websites for DFW Businesses">
+<meta name="twitter:description" content="Fast, professional websites for DFW small businesses. Starting at $400. Based in Frisco, TX.">
+<meta name="twitter:image" content="https://normandigitalco.com/images/og-image.png">
+
+<!-- Local Business Schema Markup -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Norman Digital",
+  "description": "Web design agency building fast, professional websites for small businesses across the DFW area.",
+  "url": "https://normandigitalco.com",
+  "email": "normandigitalco@gmail.com",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Frisco",
+    "addressRegion": "TX",
+    "addressCountry": "US"
+  },
+  "areaServed": [
+    "Frisco, TX", "Plano, TX", "Allen, TX", "McKinney, TX",
+    "Prosper, TX", "Celina, TX", "The Colony, TX", "Dallas, TX",
+    "Fort Worth, TX"
+  ],
+  "priceRange": "$$",
+  "openingHours": "Mo-Fr 09:00-18:00",
+  "sameAs": []
+}
+</script>
+
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=DM+Sans:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 <link rel="icon" type="image/x-icon" href="/favicon.ico">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png">
@@ -36,7 +97,6 @@ body {
   overflow-x: hidden;
 }
 
-/* NAV */
 nav {
   position: fixed;
   top: 0; left: 0; right: 0;
@@ -128,7 +188,6 @@ nav.scrolled { box-shadow: 0 2px 20px rgba(0,0,0,0.06); }
   .nav-cta { display: none; }
 }
 
-/* PAGE SYSTEM */
 .page {
   position: fixed;
   inset: 0;
@@ -154,7 +213,6 @@ nav.scrolled { box-shadow: 0 2px 20px rgba(0,0,0,0.06); }
   pointer-events: none;
 }
 
-/* SHARED */
 .inner { max-width: 1100px; margin: 0 auto; padding: 0 2.5rem; }
 
 .section-label {
@@ -186,7 +244,6 @@ nav.scrolled { box-shadow: 0 2px 20px rgba(0,0,0,0.06); }
   margin-bottom: 3rem;
 }
 
-/* HOME */
 #page-home { background: var(--white); }
 
 .hero {
@@ -319,7 +376,6 @@ nav.scrolled { box-shadow: 0 2px 20px rgba(0,0,0,0.06); }
   font-style: italic;
 }
 
-/* WHY */
 .why-section {
   padding: 6rem 2.5rem;
   background: var(--black);
@@ -377,7 +433,6 @@ nav.scrolled { box-shadow: 0 2px 20px rgba(0,0,0,0.06); }
   line-height: 1.6;
 }
 
-/* TESTIMONIALS */
 .testimonials-section {
   padding: 6rem 2.5rem;
   background: var(--gray-100);
@@ -438,7 +493,6 @@ nav.scrolled { box-shadow: 0 2px 20px rgba(0,0,0,0.06); }
   color: var(--gray-400);
 }
 
-/* ABOUT PAGE */
 #page-about { background: var(--white); }
 
 .about-hero {
@@ -515,7 +569,6 @@ nav.scrolled { box-shadow: 0 2px 20px rgba(0,0,0,0.06); }
   letter-spacing: 0.06em;
 }
 
-/* SERVICES PAGE */
 #page-services { background: var(--white); }
 
 .services-hero {
@@ -591,7 +644,6 @@ nav.scrolled { box-shadow: 0 2px 20px rgba(0,0,0,0.06); }
   flex-shrink: 0;
 }
 
-/* PROCESS */
 .process-section {
   background: var(--black);
   padding: 6rem 2.5rem;
@@ -646,13 +698,19 @@ nav.scrolled { box-shadow: 0 2px 20px rgba(0,0,0,0.06); }
   line-height: 1.7;
 }
 
-/* PRICING PAGE */
 #page-pricing { background: var(--white); }
 
 .pricing-hero {
   padding: 6rem 2.5rem 3rem;
   max-width: 800px;
   margin: 0 auto;
+  text-align: center;
+}
+
+.pricing-hero .section-sub {
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
   text-align: center;
 }
 
@@ -862,7 +920,6 @@ nav.scrolled { box-shadow: 0 2px 20px rgba(0,0,0,0.06); }
   font-weight: 300;
 }
 
-/* CONTACT PAGE */
 #page-contact { background: var(--gray-100); }
 
 .contact-wrap {
@@ -964,7 +1021,6 @@ nav.scrolled { box-shadow: 0 2px 20px rgba(0,0,0,0.06); }
 
 .form-submit:hover { background: #222; }
 
-/* FOOTER */
 footer {
   padding: 2rem 2.5rem;
   border-top: 1px solid var(--gray-200);
@@ -987,13 +1043,11 @@ footer {
   color: var(--gray-400);
 }
 
-/* ANIMATIONS */
 @keyframes fadeUp {
   from { opacity: 0; transform: translateY(18px); }
   to { opacity: 1; transform: translateY(0); }
 }
 
-/* MOBILE HAMBURGER */
 .mobile-menu-btn {
   display: none;
   flex-direction: column;
@@ -1040,14 +1094,10 @@ footer {
 
 .mobile-nav a:hover { background: var(--gray-100); color: var(--black); }
 
-/* =====================
-   RESPONSIVE BREAKPOINTS
-===================== */
 @media (max-width: 900px) {
   .nav-center { display: none; }
   nav { justify-content: space-between; padding: 0 1.25rem; }
   .mobile-menu-btn { display: flex; }
-
   .why-grid { grid-template-columns: 1fr; gap: 3rem; }
   .testimonials-grid { grid-template-columns: 1fr 1fr; gap: 1rem; }
   .about-hero { grid-template-columns: 1fr; gap: 2.5rem; padding: 4rem 2.5rem 2rem; }
@@ -1066,35 +1116,27 @@ footer {
   .hero h1 { font-size: clamp(2rem, 10vw, 3rem); }
   .hero-actions { flex-direction: column; align-items: stretch; }
   .btn-primary { text-align: center; }
-
   .why-section { padding: 4rem 1.25rem; }
   .why-grid { gap: 2.5rem; }
   .why-right { grid-template-columns: 1fr; }
-
   .testimonials-section { padding: 4rem 1.25rem; }
   .testimonials-grid { grid-template-columns: 1fr; }
-
   .logos-strip { padding: 2.5rem 1.25rem; }
   .logos-row { gap: 1.5rem; }
-
   .about-hero { padding: 4rem 1.25rem 2rem; }
   .about-photo { aspect-ratio: 4/3; }
   .about-stats { padding: 0 1.25rem 4rem; grid-template-columns: 1fr 1fr; }
-
   .services-hero { padding: 4rem 1.25rem 2rem; }
   .services-grid { padding: 0 1.25rem; margin-bottom: 0; }
   .process-section { padding: 4rem 1.25rem; }
   .steps { grid-template-columns: 1fr; }
-
   .pricing-hero { padding: 4rem 1.25rem 2rem; }
   .pricing-grid { padding: 0 1.25rem 2rem; max-width: 100%; }
   .pricing-note { padding: 0 1.25rem; flex-direction: column; align-items: flex-start; }
-
   .contact-wrap { padding: 4rem 1.25rem; gap: 2rem; }
   .contact-form { padding: 1.75rem 1.25rem; }
   .form-row { grid-template-columns: 1fr; }
   .form-submit { width: 100%; text-align: center; }
-
   footer { padding: 1.5rem 1.25rem; }
 }
 </style>
@@ -1105,7 +1147,7 @@ footer {
 <nav id="main-nav">
   <a href="#" class="nav-logo" data-page="home">
     <div class="nav-logo-icon">
-      <svg viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <svg viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
         <line x1="4" y1="18" x2="4" y2="4" stroke="white" stroke-width="2.5" stroke-linecap="square"/>
         <line x1="4" y1="4" x2="18" y2="18" stroke="white" stroke-width="2.5" stroke-linecap="square"/>
         <line x1="18" y1="18" x2="18" y2="4" stroke="white" stroke-width="2.5" stroke-linecap="square"/>
@@ -1125,14 +1167,14 @@ footer {
 
   <div class="nav-right">
     <a href="#" data-page="contact" class="nav-cta">Request a Quote</a>
-    <button class="mobile-menu-btn" aria-label="Menu">
+    <button class="mobile-menu-btn" aria-label="Open navigation menu">
       <span></span><span></span><span></span>
     </button>
   </div>
 </nav>
 
 <!-- MOBILE NAV -->
-<div class="mobile-nav" id="mobile-nav">
+<div class="mobile-nav" id="mobile-nav" role="navigation" aria-label="Mobile navigation">
   <a href="#" data-page="home">Home</a>
   <a href="#" data-page="about">About</a>
   <a href="#" data-page="services">Services</a>
@@ -1141,6 +1183,7 @@ footer {
 </div>
 
 <!-- HOME PAGE -->
+<main>
 <div class="page active" id="page-home">
   <div class="hero">
     <p class="hero-eyebrow">Frisco, TX &nbsp;&middot;&nbsp; DFW Web Design</p>
@@ -1171,27 +1214,27 @@ footer {
       <div class="why-left">
         <p class="section-label">Why Norman Digital</p>
         <h2 class="section-title">Built for local.<br>Built to convert.</h2>
-        <p class="section-sub">We&apos;re a DFW-based team that understands what small business owners actually need &mdash; a site that looks great, loads fast, and brings in customers.</p>
+        <p class="section-sub">We&apos;re a DFW-based web design agency that understands what small business owners actually need &mdash; a site that looks great, loads fast, and brings in customers.</p>
       </div>
       <div class="why-right">
         <div class="why-card">
-          <div class="why-icon">&#9889;</div>
+          <div class="why-icon" aria-hidden="true">&#9889;</div>
           <h3>Fast turnaround</h3>
-          <p>Most sites delivered within 48&ndash;72 hours of your first conversation.</p>
+          <p>Most sites delivered within a week of your first conversation.</p>
         </div>
         <div class="why-card">
-          <div class="why-icon">&#128205;</div>
+          <div class="why-icon" aria-hidden="true">&#128205;</div>
           <h3>Local DFW focus</h3>
           <p>We know the market. Built for businesses your neighbors trust.</p>
         </div>
         <div class="why-card">
-          <div class="why-icon">&#128176;</div>
+          <div class="why-icon" aria-hidden="true">&#128176;</div>
           <h3>No hidden fees</h3>
           <p>Transparent pricing, clear deliverables. You know exactly what you&apos;re getting.</p>
         </div>
         <div class="why-card">
-          <div class="why-icon">&#128241;</div>
-          <h3>Mobile-first</h3>
+          <div class="why-icon" aria-hidden="true">&#128241;</div>
+          <h3>Mobile-first design</h3>
           <p>Every site looks and works perfectly on phones, tablets, and desktops.</p>
         </div>
       </div>
@@ -1205,10 +1248,10 @@ footer {
     </div>
     <div class="testimonials-grid">
       <div class="testimonial-card">
-        <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-        <p class="testimonial-text">&ldquo;Norman Digital built our site in under 3 days. We started getting calls from it within the first week. Best investment we made for our business.&rdquo;</p>
+        <div class="testimonial-stars" aria-label="5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="testimonial-text">&ldquo;Norman Digital built our site in under a week. We started getting calls from it right away. Best investment we made for our business.&rdquo;</p>
         <div class="testimonial-author">
-          <div class="testimonial-avatar">MR</div>
+          <div class="testimonial-avatar" aria-hidden="true">MR</div>
           <div>
             <p class="testimonial-name">Maria R.</p>
             <p class="testimonial-biz">Frisco Cleaning Co.</p>
@@ -1216,10 +1259,10 @@ footer {
         </div>
       </div>
       <div class="testimonial-card">
-        <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <div class="testimonial-stars" aria-label="5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
         <p class="testimonial-text">&ldquo;Finally a web guy who speaks plain English. No corporate fluff, just a clean site that actually represents my business. I send every client there now.&rdquo;</p>
         <div class="testimonial-author">
-          <div class="testimonial-avatar">JT</div>
+          <div class="testimonial-avatar" aria-hidden="true">JT</div>
           <div>
             <p class="testimonial-name">James T.</p>
             <p class="testimonial-biz">JT&apos;s HVAC Services</p>
@@ -1227,10 +1270,10 @@ footer {
         </div>
       </div>
       <div class="testimonial-card">
-        <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <div class="testimonial-stars" aria-label="5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
         <p class="testimonial-text">&ldquo;The process was so easy. I told them about my salon, they built something I&apos;m genuinely proud to show customers. Professional, fast, and affordable.&rdquo;</p>
         <div class="testimonial-author">
-          <div class="testimonial-avatar">AL</div>
+          <div class="testimonial-avatar" aria-hidden="true">AL</div>
           <div>
             <p class="testimonial-name">Ashley L.</p>
             <p class="testimonial-biz">Luxe Hair Studio</p>
@@ -1242,7 +1285,7 @@ footer {
 
   <footer>
     <a href="#" class="footer-logo" data-page="home">Norman Digital</a>
-    <p class="footer-copy">&copy; 2026 Norman Digital. Frisco, TX.</p>
+    <p class="footer-copy">&copy; 2026 Norman Digital Co. &mdash; Frisco, TX &mdash; Web Design for DFW Small Businesses</p>
   </footer>
 </div>
 
@@ -1252,7 +1295,7 @@ footer {
     <div class="about-text">
       <p class="section-label">About</p>
       <h1 class="section-title">Built for DFW<br>small businesses.</h1>
-      <p class="section-sub">A local agency that gets it &mdash; no bloated fees, no tech headaches.</p>
+      <p class="section-sub">A local web design agency that gets it &mdash; no bloated fees, no tech headaches.</p>
       <p>Norman Digital is a web design agency based in Frisco, TX. We work exclusively with local small businesses across the DFW area &mdash; restaurants, salons, contractors, and everyone in between.</p>
       <p>Our goal is simple: get your business online with a site that <strong>looks great, works on every device, and actually brings in customers.</strong> We handle everything from design and development to domain setup and launch.</p>
       <p>We treat your business like it&apos;s our own.</p>
@@ -1260,13 +1303,13 @@ footer {
       <button class="btn-primary" data-page="contact">Work with us &rarr;</button>
     </div>
     <div class="about-photo">
-      <img src="images/norman.jpg.png" alt="Norman — Norman Digital">
+      <img src="images/norman.jpg.png" alt="Norman Digital founder — DFW web design agency based in Frisco TX" width="600" height="750">
     </div>
   </div>
 
   <div class="about-stats">
     <div class="stat">
-      <p class="stat-num">48h</p>
+      <p class="stat-num">1 wk</p>
       <p class="stat-label">Avg. turnaround</p>
     </div>
     <div class="stat">
@@ -1285,7 +1328,7 @@ footer {
 
   <footer>
     <a href="#" class="footer-logo" data-page="home">Norman Digital</a>
-    <p class="footer-copy">&copy; 2026 Norman Digital. Frisco, TX.</p>
+    <p class="footer-copy">&copy; 2026 Norman Digital Co. &mdash; Frisco, TX &mdash; Web Design for DFW Small Businesses</p>
   </footer>
 </div>
 
@@ -1300,7 +1343,7 @@ footer {
   <div class="services-grid">
     <div class="service-card">
       <p class="service-num">01</p>
-      <h3 class="service-name">Website Design &amp; Development</h3>
+      <h2 class="service-name">Website Design &amp; Development</h2>
       <p class="service-desc">Custom websites built for local DFW businesses. Clean, fast, and mobile-friendly from day one.</p>
       <ul class="service-features">
         <li>Up to 5 fully custom pages</li>
@@ -1311,7 +1354,7 @@ footer {
     </div>
     <div class="service-card">
       <p class="service-num">02</p>
-      <h3 class="service-name">Monthly Maintenance</h3>
+      <h2 class="service-name">Monthly Website Maintenance</h2>
       <p class="service-desc">Monthly updates, security monitoring, and content changes. Your site stays fresh &mdash; completely hands-free.</p>
       <ul class="service-features">
         <li>Monthly content updates</li>
@@ -1322,18 +1365,17 @@ footer {
     </div>
     <div class="service-card">
       <p class="service-num">03</p>
-      <h3 class="service-name">Domain &amp; Hosting Setup</h3>
-      <p class="service-desc">We handle everything from domain purchase to go-live. You get a real URL, a real email, and a real business.</p>
+      <h2 class="service-name">Domain &amp; Hosting Setup</h2>
+      <p class="service-desc">We handle everything from domain purchase to go-live. You get a real URL and a professional online presence.</p>
       <ul class="service-features">
         <li>Domain registration</li>
         <li>Professional hosting setup</li>
         <li>SSL certificate included</li>
-        <li>Business email setup</li>
       </ul>
     </div>
     <div class="service-card">
       <p class="service-num">04</p>
-      <h3 class="service-name">Contact Forms &amp; Integrations</h3>
+      <h2 class="service-name">Contact Forms &amp; Integrations</h2>
       <p class="service-desc">So your customers can find, contact, and book with you &mdash; directly from your website, 24/7.</p>
       <ul class="service-features">
         <li>Contact &amp; quote forms</li>
@@ -1348,7 +1390,7 @@ footer {
     <div class="process-inner">
       <p class="section-label">The process</p>
       <h2 class="section-title">Simple from start<br>to launch.</h2>
-      <p class="section-sub">Most sites are live within 48&ndash;72 hours of your first conversation with us.</p>
+      <p class="section-sub">Most sites are live within a week of your first conversation with us.</p>
       <div class="steps">
         <div class="step">
           <p class="step-num">Step 01</p>
@@ -1376,7 +1418,7 @@ footer {
 
   <footer>
     <a href="#" class="footer-logo" data-page="home">Norman Digital</a>
-    <p class="footer-copy">&copy; 2026 Norman Digital. Frisco, TX.</p>
+    <p class="footer-copy">&copy; 2026 Norman Digital Co. &mdash; Frisco, TX &mdash; Web Design for DFW Small Businesses</p>
   </footer>
 </div>
 
@@ -1385,36 +1427,38 @@ footer {
   <div class="pricing-hero">
     <p class="section-label" style="display:block; text-align:center;">Pricing</p>
     <h1 class="section-title">Flexible pricing for <span class="pricing-title-accent">forward-thinking</span> businesses.</h1>
-    <p class="section-sub">No surprises, no hidden fees. Pick the plan that fits your business, and we&apos;ll take it from there.</p>
+    <p class="section-sub" style="margin: 0 auto 3rem;">No surprises, no hidden fees. Pick the plan that fits your business, and we&apos;ll take it from there.</p>
   </div>
 
   <div class="pricing-grid">
+    <!-- STARTER -->
     <div class="pricing-card">
-      <div class="pricing-plan-icon">&#127807;</div>
+      <div class="pricing-plan-icon" aria-hidden="true">&#127807;</div>
       <p class="pricing-plan">Starter</p>
       <h2 class="pricing-name">Essential</h2>
-      <p class="pricing-desc">Perfect for small businesses needing a clean, professional online presence built quickly.</p>
+      <p class="pricing-desc">Perfect for businesses who just need a clean, simple online presence built quickly.</p>
       <div class="pricing-price">
         <span class="pricing-amount">$400</span>
         <span class="pricing-period">one-time</span>
       </div>
-      <p class="pricing-monthly">+ $39/mo maintenance</p>
+      <p class="pricing-monthly">+ $50/mo maintenance</p>
       <div class="pricing-divider"></div>
       <ul class="pricing-features">
-        <li><span class="check">&#10003;</span> Custom website design (up to 3 pages)</li>
-        <li><span class="check">&#10003;</span> Mobile-friendly layout</li>
-        <li><span class="check">&#10003;</span> Basic SEO setup</li>
-        <li><span class="check">&#10003;</span> Contact form integration</li>
-        <li><span class="check">&#10003;</span> Domain &amp; hosting setup</li>
-        <li><span class="check">&#10003;</span> Monthly content update (1 revision)</li>
-        <li><span class="check">&#10003;</span> Basic analytics dashboard</li>
+        <li><span class="check" aria-hidden="true">&#10003;</span> Custom website design (up to 3 pages)</li>
+        <li><span class="check" aria-hidden="true">&#10003;</span> Mobile-friendly layout</li>
+        <li><span class="check" aria-hidden="true">&#10003;</span> Basic SEO setup</li>
+        <li><span class="check" aria-hidden="true">&#10003;</span> Contact form integration</li>
+        <li><span class="check" aria-hidden="true">&#10003;</span> Domain &amp; hosting setup</li>
+        <li><span class="check" aria-hidden="true">&#10003;</span> Monthly content update (1 revision)</li>
+        <li><span class="check" aria-hidden="true">&#10003;</span> Google Analytics setup</li>
       </ul>
       <button class="pricing-btn pricing-btn-outline" data-page="contact">Get Started</button>
     </div>
 
+    <!-- PROFESSIONAL -->
     <div class="pricing-card featured">
       <div class="pricing-badge">Most Popular</div>
-      <div class="pricing-plan-icon">&#128640;</div>
+      <div class="pricing-plan-icon" aria-hidden="true">&#128640;</div>
       <p class="pricing-plan">Growth</p>
       <h2 class="pricing-name">Professional</h2>
       <p class="pricing-desc">A complete custom website for businesses ready to stand out and convert more visitors into customers.</p>
@@ -1422,23 +1466,24 @@ footer {
         <span class="pricing-amount">$500</span>
         <span class="pricing-period" style="color:#555;">one-time</span>
       </div>
-      <p class="pricing-monthly">+ $59/mo maintenance</p>
+      <p class="pricing-monthly">+ $75/mo maintenance</p>
       <div class="pricing-divider"></div>
       <ul class="pricing-features">
-        <li><span class="check">&#10003;</span> Custom website design (up to 5 pages)</li>
-        <li><span class="check">&#10003;</span> Advanced mobile optimization</li>
-        <li><span class="check">&#10003;</span> Full on-page SEO</li>
-        <li><span class="check">&#10003;</span> Contact form + Google Maps</li>
-        <li><span class="check">&#10003;</span> Domain, hosting &amp; SSL</li>
-        <li><span class="check">&#10003;</span> Monthly updates (3 revisions)</li>
-        <li><span class="check">&#10003;</span> Google Analytics + Search Console</li>
-        <li><span class="check">&#10003;</span> Social media links + open graph</li>
+        <li><span class="check" aria-hidden="true">&#10003;</span> Custom website design (up to 5 pages)</li>
+        <li><span class="check" aria-hidden="true">&#10003;</span> Advanced mobile optimization</li>
+        <li><span class="check" aria-hidden="true">&#10003;</span> Complete SEO setup + Google Search Console</li>
+        <li><span class="check" aria-hidden="true">&#10003;</span> Contact form + Google Maps</li>
+        <li><span class="check" aria-hidden="true">&#10003;</span> Domain, hosting &amp; SSL</li>
+        <li><span class="check" aria-hidden="true">&#10003;</span> Monthly updates (3 revisions)</li>
+        <li><span class="check" aria-hidden="true">&#10003;</span> Google Analytics + Search Console</li>
+        <li><span class="check" aria-hidden="true">&#10003;</span> Social media links + open graph</li>
       </ul>
       <button class="pricing-btn pricing-btn-white" data-page="contact">Get Started</button>
     </div>
 
+    <!-- PREMIUM -->
     <div class="pricing-card">
-      <div class="pricing-plan-icon">&#128142;</div>
+      <div class="pricing-plan-icon" aria-hidden="true">&#128142;</div>
       <p class="pricing-plan">Premium</p>
       <h2 class="pricing-name">Complete</h2>
       <p class="pricing-desc">Full-featured website with stronger marketing tools and a complete digital presence &mdash; built to scale.</p>
@@ -1449,15 +1494,15 @@ footer {
       <p class="pricing-monthly">+ $129/mo maintenance</p>
       <div class="pricing-divider"></div>
       <ul class="pricing-features">
-        <li><span class="check">&#10003;</span> Custom website (up to 8 pages)</li>
-        <li><span class="check">&#10003;</span> Premium design &amp; animations</li>
-        <li><span class="check">&#10003;</span> Full SEO + local SEO strategy</li>
-        <li><span class="check">&#10003;</span> Booking / quote request system</li>
-        <li><span class="check">&#10003;</span> Domain, hosting &amp; SSL</li>
-        <li><span class="check">&#10003;</span> Unlimited monthly revisions</li>
-        <li><span class="check">&#10003;</span> Full analytics suite</li>
-        <li><span class="check">&#10003;</span> Priority support &amp; response</li>
-        <li><span class="check">&#10003;</span> Logo design included</li>
+        <li><span class="check" aria-hidden="true">&#10003;</span> Custom website (up to 8 pages)</li>
+        <li><span class="check" aria-hidden="true">&#10003;</span> Premium design &amp; animations</li>
+        <li><span class="check" aria-hidden="true">&#10003;</span> Full SEO + local SEO strategy</li>
+        <li><span class="check" aria-hidden="true">&#10003;</span> Booking / quote request system</li>
+        <li><span class="check" aria-hidden="true">&#10003;</span> Domain, hosting &amp; SSL</li>
+        <li><span class="check" aria-hidden="true">&#10003;</span> 10 monthly revisions</li>
+        <li><span class="check" aria-hidden="true">&#10003;</span> Full analytics suite</li>
+        <li><span class="check" aria-hidden="true">&#10003;</span> Priority support &amp; response</li>
+        <li><span class="check" aria-hidden="true">&#10003;</span> Logo design included</li>
       </ul>
       <button class="pricing-btn pricing-btn-dark" data-page="contact">Get Started</button>
     </div>
@@ -1470,7 +1515,7 @@ footer {
 
   <footer>
     <a href="#" class="footer-logo" data-page="home">Norman Digital</a>
-    <p class="footer-copy">&copy; 2026 Norman Digital. Frisco, TX.</p>
+    <p class="footer-copy">&copy; 2026 Norman Digital Co. &mdash; Frisco, TX &mdash; Web Design for DFW Small Businesses</p>
   </footer>
 </div>
 
@@ -1487,21 +1532,21 @@ footer {
     <form class="contact-form" action="https://formspree.io/f/mreolqjw" method="POST">
       <div class="form-row">
         <div class="form-group">
-          <label>Your name</label>
-          <input type="text" name="name" placeholder="Jane Smith" required>
+          <label for="name">Your name</label>
+          <input type="text" id="name" name="name" placeholder="Jane Smith" required>
         </div>
         <div class="form-group">
-          <label>Business name</label>
-          <input type="text" name="business" placeholder="Smith&apos;s Salon">
+          <label for="business">Business name</label>
+          <input type="text" id="business" name="business" placeholder="Smith&apos;s Salon">
         </div>
       </div>
       <div class="form-group">
-        <label>Email</label>
-        <input type="email" name="email" placeholder="jane@yourshop.com" required>
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" placeholder="jane@yourshop.com" required>
       </div>
       <div class="form-group">
-        <label>What do you need?</label>
-        <select name="service">
+        <label for="service">What do you need?</label>
+        <select id="service" name="service">
           <option value="">Select a service</option>
           <option>New website &mdash; Essential ($400)</option>
           <option>New website &mdash; Professional ($500)</option>
@@ -1512,8 +1557,8 @@ footer {
         </select>
       </div>
       <div class="form-group">
-        <label>Tell us about your business</label>
-        <textarea name="message" placeholder="What does your business do, where are you located, and what are you looking for?"></textarea>
+        <label for="message">Tell us about your business</label>
+        <textarea id="message" name="message" placeholder="What does your business do, where are you located, and what are you looking for?"></textarea>
       </div>
       <button type="submit" class="form-submit">Send message &rarr;</button>
     </form>
@@ -1521,9 +1566,10 @@ footer {
 
   <footer>
     <a href="#" class="footer-logo" data-page="home">Norman Digital</a>
-    <p class="footer-copy">&copy; 2026 Norman Digital. Frisco, TX.</p>
+    <p class="footer-copy">&copy; 2026 Norman Digital Co. &mdash; Frisco, TX &mdash; Web Design for DFW Small Businesses</p>
   </footer>
 </div>
+</main>
 
 <script>
 (function() {
