@@ -4,14 +4,18 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<!-- Google Analytics -->
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-H9DW5S1WET"></script>
+<!-- Google Analytics — deferred to not block rendering -->
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
   gtag('config', 'G-H9DW5S1WET');
+  window.addEventListener('load', function() {
+    var s = document.createElement('script');
+    s.async = true;
+    s.src = 'https://www.googletagmanager.com/gtag/js?id=G-H9DW5S1WET';
+    document.head.appendChild(s);
+  });
 </script>
 
 <!-- Primary Meta Tags -->
@@ -67,7 +71,12 @@
 }
 </script>
 
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=DM+Sans:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<!-- Preconnect to font origins to establish early connections -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<!-- Non-blocking font load: preload triggers fetch, onload swaps to stylesheet -->
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=DM+Sans:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=DM+Sans:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap"></noscript>
 <link rel="icon" type="image/x-icon" href="/favicon.ico">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png">
 <link rel="apple-touch-icon" sizes="180x180" href="/favicon.png">
@@ -79,8 +88,8 @@
   --white: #fafafa;
   --gray-100: #f2f2f2;
   --gray-200: #e0e0e0;
-  --gray-400: #999;
-  --gray-600: #555;
+  --gray-400: #767676; /* bumped from #999 to pass WCAG AA 4.5:1 on white */
+  --gray-600: #4a4a4a; /* bumped slightly from #555 */
   --accent: #3B82F6;
   --accent-dark: #1d4ed8;
   --serif: 'Plus Jakarta Sans', system-ui, sans-serif;
@@ -156,7 +165,7 @@ nav.scrolled { box-shadow: 0 2px 20px rgba(0,0,0,0.06); }
   font-size: 0.82rem;
   font-weight: 600;
   letter-spacing: 0.01em;
-  color: var(--gray-600);
+  color: var(--black);
   text-decoration: none;
   padding: 0.45rem 1rem;
   border-radius: 2rem;
@@ -354,10 +363,10 @@ nav.scrolled { box-shadow: 0 2px 20px rgba(0,0,0,0.06); }
 
 .logos-label {
   font-size: 0.7rem;
-  font-weight: 600;
+  font-weight: 700;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--gray-400);
+  color: #666;
   margin-bottom: 2rem;
   text-align: center;
 }
@@ -373,7 +382,7 @@ nav.scrolled { box-shadow: 0 2px 20px rgba(0,0,0,0.06); }
 .logo-item {
   font-family: var(--serif);
   font-size: 1.1rem;
-  color: var(--gray-200);
+  color: #888;
   letter-spacing: -0.01em;
   font-style: italic;
 }
@@ -1305,7 +1314,7 @@ footer {
       <button class="btn-primary" data-page="contact">Work with us &rarr;</button>
     </div>
     <div class="about-photo">
-      <img src="images/norman.jpg.png" alt="Norman Digital founder — DFW web design agency based in Frisco TX" width="600" height="750">
+      <img src="images/norman.jpg.png" alt="Norman Digital founder — DFW web design agency based in Frisco TX" width="600" height="750" loading="lazy" decoding="async">
     </div>
   </div>
 
