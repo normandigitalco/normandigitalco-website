@@ -25,7 +25,7 @@
 <meta name="keywords" content="web design Frisco TX, web design DFW, small business website Frisco, website designer Plano, web designer Allen TX, McKinney web design, DFW web design agency, affordable website design Texas">
 <meta name="author" content="Norman Digital">
 <meta name="robots" content="index, follow">
-<link rel="canonical" href="https://normandigitalco.com">
+<link rel="canonical" href="https://normandigitalco.com/">
 <link rel="icon" type="image/x-icon" href="/favicon.ico">
 <link rel="icon" type="image/png" href="/favicon.png">
 
@@ -1584,9 +1584,29 @@ footer {
 
 <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 (function() {
-  var currentPage = 'home';
+  // Map URL paths to page names
+  var pathMap = {
+    '/': 'home',
+    '/services': 'services',
+    '/pricing': 'pricing',
+    '/contact': 'contact'
+  };
+  var reverseMap = {
+    'home': '/',
+    'services': '/services',
+    'pricing': '/pricing',
+    'contact': '/contact'
+  };
 
-  function showPage(name) {
+  // Determine initial page from URL
+  var initPath = window.location.pathname.replace(/\/$/, '') || '/';
+  var currentPage = pathMap[initPath] || pathMap[initPath + '/'] || 'home';
+
+  // Activate initial page
+  var initEl = document.getElementById('page-' + currentPage);
+  if (initEl) initEl.classList.add('active');
+
+  function showPage(name, pushState) {
     if (name === currentPage) return;
     var current = document.getElementById('page-' + currentPage);
     var next = document.getElementById('page-' + name);
@@ -1604,7 +1624,18 @@ footer {
     });
     var mobileNav = document.getElementById('mobile-nav');
     if (mobileNav) mobileNav.classList.remove('open');
+    // Update the browser URL so Google can crawl each section
+    if (pushState !== false && window.history && window.history.pushState) {
+      var newPath = reverseMap[name] || '/';
+      window.history.pushState({ page: name }, '', newPath);
+    }
   }
+
+  // Handle browser back/forward
+  window.addEventListener('popstate', function(e) {
+    var page = (e.state && e.state.page) || 'home';
+    showPage(page, false);
+  });
 
   document.addEventListener('click', function(e) {
     var el = e.target.closest('[data-page]');
