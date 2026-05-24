@@ -265,7 +265,22 @@ nav.scrolled { box-shadow: 0 2px 20px rgba(0,0,0,0.06); }
   padding: 5rem 2.5rem 4rem;
   max-width: 1100px;
   margin: 0 auto;
+  position: relative;
 }
+
+.hero::before {
+  content: '';
+  position: fixed;
+  top: 68px; left: 0; right: 0;
+  height: calc(100vh - 68px);
+  background-image: radial-gradient(circle, #d4d4d4 1px, transparent 1px);
+  background-size: 28px 28px;
+  opacity: 0.35;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.hero > * { position: relative; z-index: 1; }
 
 .hero-eyebrow {
   font-family: var(--display);
@@ -375,16 +390,21 @@ nav.scrolled { box-shadow: 0 2px 20px rgba(0,0,0,0.06); }
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 3rem;
+  gap: 0.6rem;
   flex-wrap: wrap;
 }
 
 .logo-item {
-  font-family: var(--serif);
-  font-size: 1.1rem;
-  color: #888;
-  letter-spacing: -0.01em;
-  font-style: italic;
+  font-family: var(--display);
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--gray-600);
+  letter-spacing: 0.03em;
+  background: var(--white);
+  border: 1px solid var(--gray-200);
+  border-radius: 2rem;
+  padding: 0.35rem 1rem;
+  transition: border-color 0.2s, color 0.2s;
 }
 
 .why-section {
@@ -423,10 +443,19 @@ nav.scrolled { box-shadow: 0 2px 20px rgba(0,0,0,0.06); }
 .why-icon {
   width: 36px; height: 36px;
   background: #1a1a1a;
+  border: 1px solid #2a2a2a;
   border-radius: 8px;
   display: flex; align-items: center; justify-content: center;
   margin-bottom: 1rem;
-  font-size: 16px;
+}
+
+.why-icon svg {
+  width: 18px; height: 18px;
+  stroke: var(--accent);
+  fill: none;
+  stroke-width: 1.75;
+  stroke-linecap: round;
+  stroke-linejoin: round;
 }
 
 .why-card h3 {
@@ -594,19 +623,63 @@ nav.scrolled { box-shadow: 0 2px 20px rgba(0,0,0,0.06); }
   padding: 0 2.5rem;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 1px;
-  background: var(--gray-200);
-  border: 1px solid var(--gray-200);
+  gap: 1.25rem;
   margin-bottom: 6rem;
 }
 
 .service-card {
-  background: var(--white);
+  background: #e8e8e8;
+  border: 1px solid #c8c8c8;
+  border-radius: 12px;
   padding: 2.5rem;
-  transition: background 0.2s;
+  transition: border-color 0.2s, transform 0.2s, background 0.2s;
+  position: relative;
 }
 
-.service-card:hover { background: var(--gray-100); }
+.service-card:hover {
+  background: #e0e0e0;
+  border-color: #aaa;
+  transform: translateY(-2px);
+}
+
+.service-card.featured-svc {
+  border: 2px solid var(--black);
+  background: var(--black);
+}
+
+.service-card.featured-svc:hover { border-color: #2a2a2a; transform: translateY(-2px); }
+.service-card.featured-svc .service-num { color: var(--accent); }
+.service-card.featured-svc .service-name { color: #f0f0f0; }
+.service-card.featured-svc .service-desc { color: #666; }
+.service-card.featured-svc .service-divider { background: #1e1e1e; }
+.service-card.featured-svc .service-features li { color: #777; }
+.service-card.featured-svc .service-features li::before { background: var(--accent); }
+.service-card.featured-svc .service-icon { background: #1a1a1a; border-color: #2a2a2a; }
+.service-card.featured-svc .service-icon svg { stroke: var(--accent); }
+
+.service-icon {
+  width: 42px; height: 42px;
+  background: var(--white);
+  border: 1px solid #c8c8c8;
+  border-radius: 10px;
+  display: flex; align-items: center; justify-content: center;
+  margin-bottom: 1.25rem;
+}
+
+.service-icon svg {
+  width: 20px; height: 20px;
+  stroke: var(--accent);
+  fill: none;
+  stroke-width: 1.75;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.service-divider {
+  height: 1px;
+  background: #c8c8c8;
+  margin: 1.25rem 0;
+}
 
 .service-num {
   font-size: 0.7rem;
@@ -1138,7 +1211,7 @@ footer {
   .about-photo { aspect-ratio: 4/3; }
   .about-stats { padding: 0 1.25rem 4rem; grid-template-columns: 1fr 1fr; }
   .services-hero { padding: 4rem 1.25rem 2rem; }
-  .services-grid { padding: 0 1.25rem; margin-bottom: 0; }
+  .services-grid { grid-template-columns: 1fr; padding: 0 1.25rem; margin-bottom: 0; gap: 1rem; }
   .process-section { padding: 4rem 1.25rem; }
   .steps { grid-template-columns: 1fr; }
   .pricing-hero { padding: 4rem 1.25rem 2rem; }
@@ -1229,22 +1302,22 @@ footer {
       </div>
       <div class="why-right">
         <div class="why-card">
-          <div class="why-icon" aria-hidden="true">&#9889;</div>
+          <div class="why-icon" aria-hidden="true"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M13 2L4.5 13.5H12L11 22L19.5 10.5H12L13 2Z"/></svg></div>
           <h3>Fast turnaround</h3>
           <p>Most sites delivered within a week of your first conversation.</p>
         </div>
         <div class="why-card">
-          <div class="why-icon" aria-hidden="true">&#128205;</div>
+          <div class="why-icon" aria-hidden="true"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg></div>
           <h3>Local DFW focus</h3>
           <p>We know the market. Built for businesses your neighbors trust.</p>
         </div>
         <div class="why-card">
-          <div class="why-icon" aria-hidden="true">&#128176;</div>
+          <div class="why-icon" aria-hidden="true"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2l7 4v6c0 4.5-3.5 8.3-7 10-3.5-1.7-7-5.5-7-10V6l7-4z"/><path d="M9 12l2 2 4-4"/></svg></div>
           <h3>No hidden fees</h3>
           <p>Transparent pricing, clear deliverables. You know exactly what you&apos;re getting.</p>
         </div>
         <div class="why-card">
-          <div class="why-icon" aria-hidden="true">&#128241;</div>
+          <div class="why-icon" aria-hidden="true"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><rect x="7" y="2" width="10" height="20" rx="2"/><path d="M12 18h.01"/></svg></div>
           <h3>Mobile-first design</h3>
           <p>Every site looks and works perfectly on phones, tablets, and desktops.</p>
         </div>
@@ -1352,10 +1425,14 @@ footer {
   </div>
 
   <div class="services-grid">
+
     <div class="service-card">
-      <p class="service-num">01</p>
+      <div class="service-icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/><path d="M7 8l3 3-3 3"/><path d="M13 14h4"/></svg>
+      </div>
       <h2 class="service-name">Website Design &amp; Development</h2>
       <p class="service-desc">Custom websites built for local DFW businesses. Clean, fast, and mobile-friendly from day one.</p>
+      <div class="service-divider"></div>
       <ul class="service-features">
         <li>Up to 5 fully custom pages</li>
         <li>Mobile-responsive design</li>
@@ -1363,10 +1440,15 @@ footer {
         <li>SEO-ready structure</li>
       </ul>
     </div>
-    <div class="service-card">
-      <p class="service-num">02</p>
+
+    <div class="service-card featured-svc">
+      <div class="pricing-badge">Most Requested</div>
+      <div class="service-icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M21 12a9 9 0 1 1-9-9c2.52 0 4.93 1 6.74 2.74L21 8"/><path d="M21 3v5h-5"/></svg>
+      </div>
       <h2 class="service-name">Monthly Website Maintenance</h2>
       <p class="service-desc">Monthly updates, security monitoring, and content changes. Your site stays fresh &mdash; completely hands-free.</p>
+      <div class="service-divider"></div>
       <ul class="service-features">
         <li>Monthly content updates</li>
         <li>Security monitoring</li>
@@ -1374,20 +1456,28 @@ footer {
         <li>Priority support</li>
       </ul>
     </div>
+
     <div class="service-card">
-      <p class="service-num">03</p>
+      <div class="service-icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+      </div>
       <h2 class="service-name">Domain &amp; Hosting Setup</h2>
       <p class="service-desc">We handle everything from domain purchase to go-live. You get a real URL and a professional online presence.</p>
+      <div class="service-divider"></div>
       <ul class="service-features">
         <li>Domain registration</li>
         <li>Professional hosting setup</li>
         <li>SSL certificate included</li>
       </ul>
     </div>
+
     <div class="service-card">
-      <p class="service-num">04</p>
+      <div class="service-icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 7l10 7 10-7"/></svg>
+      </div>
       <h2 class="service-name">Contact Forms &amp; Integrations</h2>
       <p class="service-desc">So your customers can find, contact, and book with you &mdash; directly from your website, 24/7.</p>
+      <div class="service-divider"></div>
       <ul class="service-features">
         <li>Contact &amp; quote forms</li>
         <li>Google Maps integration</li>
@@ -1395,6 +1485,12 @@ footer {
         <li>Social media links</li>
       </ul>
     </div>
+
+  </div>
+
+  <div style="max-width:1100px; margin: -3rem auto 6rem; padding: 0 2.5rem; display:flex; gap:1rem; align-items:center; flex-wrap:wrap;">
+    <button class="btn-primary" data-page="contact">Start a Project &rarr;</button>
+    <button class="btn-secondary" data-page="pricing">See pricing &rarr;</button>
   </div>
 
   <div class="process-section">
@@ -1463,7 +1559,7 @@ footer {
         <li><span class="check" aria-hidden="true">&#10003;</span> Monthly content update (1 revision)</li>
         <li><span class="check" aria-hidden="true">&#10003;</span> Google Analytics setup</li>
       </ul>
-      <button class="pricing-btn pricing-btn-outline" data-page="contact">Get Started</button>
+      <button class="pricing-btn pricing-btn-dark" data-page="contact">Get Started</button>
     </div>
 
     <!-- PROFESSIONAL -->
