@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Free Website Mockup — Norman Digital</title>
+<meta name="description" content="Claim your free custom website mockup from Norman Digital. No commitment, no strings. See exactly what your new site could look like.">
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" type="image/png" href="/favicon.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=DM+Sans:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=DM+Sans:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap"></noscript>
+
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --black: #0a0a0a;
+  --white: #fafafa;
+  --gray-100: #f2f2f2;
+  --gray-200: #e0e0e0;
+  --gray-400: #767676;
+  --gray-600: #4a4a4a;
+  --accent: #3B82F6;
+  --accent-dark: #1d4ed8;
+  --serif: 'Plus Jakarta Sans', system-ui, sans-serif;
+  --sans: 'Inter', system-ui, sans-serif;
+  --display: 'DM Sans', system-ui, sans-serif;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--sans);
+  background: var(--white);
+  color: var(--gray-600);
+  font-size: 16px;
+  line-height: 1.7;
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+
+/* ── NAV ── */
+nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 2rem;
+  height: 64px;
+  background: rgba(250,250,250,0.95);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--gray-200);
+}
+
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+}
+
+.nav-logo-icon {
+  width: 32px; height: 32px;
+  background: var(--black);
+  border-radius: 5px;
+  display: flex; align-items: center; justify-content: center;
+}
+
+.nav-logo-icon svg { width: 20px; height: 20px; }
+
+.nav-logo-name {
+  font-family: var(--display);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--black);
+  letter-spacing: -0.02em;
+}
+
+.nav-logo-name span { color: var(--accent); }
+
+/* ── DOT GRID BG ── */
+.dot-bg {
+  position: fixed;
+  top: 64px; left: 0; right: 0; bottom: 0;
+  background-image: radial-gradient(circle, #d4d4d4 1px, transparent 1px);
+  background-size: 28px 28px;
+  opacity: 0.35;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ── LAYOUT ── */
+.page-wrap {
+  position: relative;
+  z-index: 1;
+  padding-top: 64px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* ── HERO ── */
+.hero {
+  width: 100%;
+  max-width: 680px;
+  padding: 5rem 2rem 2rem;
+  text-align: center;
+}
+
+.hero-eyebrow {
+  font-family: var(--display);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 1.25rem;
+  opacity: 0;
+  animation: fadeUp 0.6s ease forwards 0.1s;
+}
+
+.hero h1 {
+  font-family: var(--serif);
+  font-size: clamp(2rem, 5vw, 3.25rem);
+  font-weight: 800;
+  line-height: 1.08;
+  letter-spacing: -0.03em;
+  color: var(--black);
+  margin-bottom: 1.25rem;
+  opacity: 0;
+  animation: fadeUp 0.6s ease forwards 0.2s;
+}
+
+.hero h1 em { font-style: normal; color: var(--accent); }
+
+.hero-sub {
+  font-size: 1rem;
+  font-weight: 300;
+  color: var(--gray-600);
+  line-height: 1.8;
+  max-width: 500px;
+  margin: 0 auto 2.5rem;
+  opacity: 0;
+  animation: fadeUp 0.6s ease forwards 0.35s;
+}
+
+/* ── TRUST PILLS ── */
+.trust-row {
+  display: flex;
+  justify-content: center;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+  margin-bottom: 3rem;
+  opacity: 0;
+  animation: fadeUp 0.6s ease forwards 0.45s;
+}
+
+.trust-pill {
+  font-family: var(--display);
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--gray-600);
+  background: var(--white);
+  border: 1px solid var(--gray-200);
+  border-radius: 2rem;
+  padding: 0.3rem 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.trust-pill .dot {
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: var(--accent);
+  flex-shrink: 0;
+}
+
+/* ── FORM CARD ── */
+.form-card {
+  width: 100%;
+  max-width: 600px;
+  background: var(--white);
+  border: 1px solid var(--gray-200);
+  border-radius: 16px;
+  padding: 2.5rem;
+  margin: 0 2rem 4rem;
+  box-shadow: 0 4px 32px rgba(0,0,0,0.06);
+  opacity: 0;
+  animation: fadeUp 0.6s ease forwards 0.5s;
+}
+
+.form-group {
+  margin-bottom: 1.25rem;
+}
+
+.form-group label {
+  display: block;
+  font-family: var(--display);
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--black);
+  margin-bottom: 0.45rem;
+  letter-spacing: 0.01em;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  font-family: var(--sans);
+  font-size: 0.9rem;
+  font-weight: 400;
+  color: var(--black);
+  background: var(--gray-100);
+  border: 1.5px solid transparent;
+  border-radius: 10px;
+  padding: 0.75rem 1rem;
+  transition: border-color 0.2s, background 0.2s;
+  outline: none;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: var(--gray-400);
+  font-weight: 300;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  background: var(--white);
+  border-color: var(--accent);
+}
+
+.form-group select {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23767676' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  padding-right: 2.5rem;
+  cursor: pointer;
+  background-color: var(--gray-100);
+}
+
+.form-group select option { color: var(--black); }
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 100px;
+  line-height: 1.6;
+}
+
+.form-note {
+  font-size: 0.78rem;
+  color: var(--gray-400);
+  margin-bottom: 1.5rem;
+  line-height: 1.5;
+}
+
+.form-submit {
+  width: 100%;
+  background: var(--black);
+  color: var(--white);
+  padding: 0.95rem 2rem;
+  border-radius: 2rem;
+  font-family: var(--display);
+  font-size: 0.9rem;
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.15s;
+  letter-spacing: -0.01em;
+}
+
+.form-submit:hover { background: #222; transform: translateY(-1px); }
+.form-submit:active { transform: translateY(0); }
+
+/* ── SUCCESS STATE ── */
+.success-state {
+  display: none;
+  text-align: center;
+  padding: 1rem 0;
+}
+
+.success-icon {
+  width: 56px; height: 56px;
+  background: #ecfdf5;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  margin: 0 auto 1.5rem;
+}
+
+.success-icon svg {
+  width: 28px; height: 28px;
+  stroke: #10b981;
+  fill: none;
+  stroke-width: 2.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.success-state h2 {
+  font-family: var(--serif);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--black);
+  letter-spacing: -0.02em;
+  margin-bottom: 0.75rem;
+}
+
+.success-state p {
+  font-size: 0.9rem;
+  color: var(--gray-600);
+  font-weight: 300;
+  line-height: 1.7;
+}
+
+/* ── FOOTER ── */
+footer {
+  width: 100%;
+  padding: 2rem;
+  text-align: center;
+  border-top: 1px solid var(--gray-200);
+  margin-top: auto;
+}
+
+footer a {
+  font-family: var(--display);
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--black);
+  text-decoration: none;
+  letter-spacing: -0.01em;
+}
+
+footer p {
+  font-size: 0.75rem;
+  color: var(--gray-400);
+  margin-top: 0.4rem;
+}
+
+/* ── ANIMATION ── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ── MOBILE ── */
+@media (max-width: 640px) {
+  .hero { padding: 3.5rem 1.5rem 1.5rem; }
+  .form-card { padding: 1.75rem 1.5rem; margin: 0 1rem 3rem; }
+  .trust-row { gap: 0.4rem; }
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="https://normandigitalco.com" class="nav-logo">
+    <div class="nav-logo-icon">
+      <!-- N monogram matching main site -->
+      <svg viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M4 18V4l14 14V4" stroke="#fafafa" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </div>
+    <span class="nav-logo-name">Norman <span>Digital</span></span>
+  </a>
+</nav>
+
+<div class="dot-bg" aria-hidden="true"></div>
+
+<div class="page-wrap">
+
+  <section class="hero">
+    <p class="hero-eyebrow">Free — No Commitment</p>
+    <h1>Claim Your Free<br><em>Website Mockup</em></h1>
+    <p class="hero-sub">Fill out the form below and we'll design a custom mockup for your business, completely free. No pressure, no strings. Just see what's possible.</p>
+
+    <div class="trust-row">
+      <span class="trust-pill"><span class="dot"></span>Custom to your brand</span>
+      <span class="trust-pill"><span class="dot"></span>100% free, no commitment</span>
+      <span class="trust-pill"><span class="dot"></span>See it before you buy</span>
+    </div>
+  </section>
+
+  <div class="form-card">
+
+    <!-- FORM -->
+    <div id="form-wrap">
+      <form
+        id="mockup-form"
+        action="https://formspree.io/f/mreolqjw"
+        method="POST"
+      >
+        <!-- Hidden field so you can tell these apart from main site submissions -->
+        <input type="hidden" name="_subject" value="🎨 New Free Mockup Request">
+        <input type="hidden" name="source" value="free-mockup landing page">
+
+        <div class="form-group">
+          <label for="business">Business name *</label>
+          <input type="text" id="business" name="business" placeholder="e.g. Mike's Auto Detail" required>
+        </div>
+
+        <div class="form-group">
+          <label for="website">Current website</label>
+          <input type="text" id="website" name="website" placeholder="yoursite.com — or leave blank if you don't have one">
+        </div>
+
+        <div class="form-group">
+          <label for="social">Instagram / social media handles</label>
+          <input type="text" id="social" name="social" placeholder="@yourbusiness — so we can pull your photos & branding">
+        </div>
+
+        <div class="form-group">
+          <label for="business_type">What kind of business do you run? *</label>
+          <select id="business_type" name="business_type" required>
+            <option value="" disabled selected>Select your industry</option>
+            <option>Auto Detailing</option>
+            <option>Pressure Washing</option>
+            <option>Lawn Care / Landscaping</option>
+            <option>Cleaning Service</option>
+            <option>HVAC / Plumbing / Electrical</option>
+            <option>Beauty / Salon / Barbershop</option>
+            <option>Fitness / Personal Training</option>
+            <option>Food / Restaurant / Catering</option>
+            <option>Real Estate</option>
+            <option>Photography / Videography</option>
+            <option>Other service business</option>
+          </select>
+        </div>
+
+        <p class="form-note">* We'll reach back out via your social handle or DM. No spam, ever.</p>
+
+        <button type="submit" class="form-submit">Request My Free Mockup &rarr;</button>
+      </form>
+    </div>
+
+    <!-- SUCCESS -->
+    <div class="success-state" id="success-state">
+      <div class="success-icon">
+        <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+      </div>
+      <h2>You're all set!</h2>
+      <p>We got your request. Expect your custom mockup within 48 hours — keep an eye on your DMs.</p>
+    </div>
+
+  </div>
+
+  <footer>
+    <a href="https://normandigitalco.com">normandigitalco.com</a>
+    <p>&copy; 2026 Norman Digital Co.</p>
+  </footer>
+
+</div>
+
+<script>
+  const form = document.getElementById('mockup-form');
+  const formWrap = document.getElementById('form-wrap');
+  const successState = document.getElementById('success-state');
+
+  form.addEventListener('submit', async function(e) {
+    e.preventDefault();
+    const btn = form.querySelector('.form-submit');
+    btn.textContent = 'Sending…';
+    btn.disabled = true;
+
+    try {
+      const data = new FormData(form);
+      const res = await fetch(form.action, {
+        method: 'POST',
+        body: data,
+        headers: { 'Accept': 'application/json' }
+      });
+
+      if (res.ok) {
+        formWrap.style.display = 'none';
+        successState.style.display = 'block';
+      } else {
+        btn.textContent = 'Something went wrong — try again';
+        btn.disabled = false;
+      }
+    } catch {
+      btn.textContent = 'Something went wrong — try again';
+      btn.disabled = false;
+    }
+  });
+</script>
+
+</body>
+</html>
