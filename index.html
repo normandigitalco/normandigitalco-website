@@ -1287,6 +1287,20 @@ footer {
   background: var(--gray-200);
 }
 
+.svc-row[data-page] {
+  cursor: pointer;
+  transition: border-color 0.2s, transform 0.15s;
+}
+
+.svc-row[data-page]:hover {
+  border-color: rgba(59,130,246,0.4);
+  transform: translateY(-2px);
+}
+
+.svc-row[data-page]:active {
+  transform: translateY(0);
+}
+
 @media (max-width: 900px) {
   .nav-center { display: none; }
   nav { justify-content: space-between; padding: 0 1.25rem; }
@@ -1325,6 +1339,7 @@ footer {
   .svc-row { grid-template-columns: 48px 1fr; gap: 1.25rem; padding: 1.75rem; }
   .svc-num { font-size: 2.5rem; }
   .services-list { padding: 0 1.25rem 3rem; }
+  .svc-tags { display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem; }
   .about-stats { padding: 0 1.25rem 4rem; grid-template-columns: 1fr 1fr; }
   .services-hero { padding: 4rem 1.25rem 2rem; }
   .services-grid { grid-template-columns: 1fr; padding: 0 1.25rem; margin-bottom: 0; gap: 1rem; }
@@ -1426,7 +1441,7 @@ footer {
         <div class="why-card">
           <div class="why-icon" aria-hidden="true"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
           <h3>Real person behind it</h3>
-          <p>You work directly with me — not an account manager or outsourced team.</p>
+          <p>You work directly with me, not an account manager or outsourced team.</p>
         </div>
         <div class="why-card">
           <div class="why-icon" aria-hidden="true"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2l7 4v6c0 4.5-3.5 8.3-7 10-3.5-1.7-7-5.5-7-10V6l7-4z"/><path d="M9 12l2 2 4-4"/></svg></div>
@@ -1439,6 +1454,9 @@ footer {
           <p>Every site looks and works perfectly on phones, tablets, and desktops.</p>
         </div>
       </div>
+    </div>
+    <div style="margin-top:3rem;">
+      <button class="btn-primary" data-page="contact">Get a Free Mockup &rarr;</button>
     </div>
   </div>
 
@@ -1478,7 +1496,7 @@ footer {
       <button class="btn-primary" data-page="contact">Work with us &rarr;</button>
     </div>
     <div class="about-photo">
-      <img src="images/norman.png" alt="Norman Digital founder — DFW web design agency based in Frisco TX" width="600" height="750" loading="lazy" decoding="async">
+      <img src="images/norman_jpg.png" alt="Norman Digital founder — web design agency based in Dallas TX" width="600" height="750" loading="lazy" decoding="async">
     </div>
   </div>
 
@@ -1517,12 +1535,12 @@ footer {
 
   <div class="services-list">
 
-    <div class="svc-row">
+    <div class="svc-row" data-page="contact" role="button" tabindex="0">
       <div class="svc-num">01</div>
       <div class="svc-content">
         <div class="svc-badge">Most Requested</div>
         <h2 class="svc-name">Website Design &amp; Development</h2>
-        <p class="svc-desc">Custom websites built for service businesses across the US. Clean, fast, and mobile-friendly from day one. No templates, no shortcuts — every site is built specifically for your business.</p>
+        <p class="svc-desc">Custom websites built for service businesses across the US. Clean, fast, and mobile-friendly from day one. No templates, no shortcuts. Every site is built specifically for your business.</p>
         <div class="svc-tags">
           <span>Custom design</span>
           <span>Mobile-first</span>
@@ -1532,11 +1550,11 @@ footer {
       </div>
     </div>
 
-    <div class="svc-row">
+    <div class="svc-row" data-page="contact" role="button" tabindex="0">
       <div class="svc-num">02</div>
       <div class="svc-content">
         <h2 class="svc-name">Search Engine Optimization</h2>
-        <p class="svc-desc">Your site built so Google can actually find it. From basic meta tags and schema markup to dedicated pages targeting your exact services and cities — we build for visibility from day one.</p>
+        <p class="svc-desc">Your site built so Google can actually find it. From basic meta tags and schema markup to dedicated pages targeting your exact services and cities. We build for visibility from day one.</p>
         <div class="svc-tags">
           <span>Schema markup</span>
           <span>Search Console</span>
@@ -1546,11 +1564,11 @@ footer {
       </div>
     </div>
 
-    <div class="svc-row">
+    <div class="svc-row" data-page="contact" role="button" tabindex="0">
       <div class="svc-num">03</div>
       <div class="svc-content">
         <h2 class="svc-name">Domain &amp; Hosting Setup</h2>
-        <p class="svc-desc">We handle everything from domain purchase to go-live. You get a real URL, fast hosting, and a professional online presence — no tech knowledge needed on your end.</p>
+        <p class="svc-desc">We handle everything from domain purchase to go-live. You get a real URL, fast hosting, and a professional online presence. No tech knowledge needed on your end.</p>
         <div class="svc-tags">
           <span>Domain registration</span>
           <span>Cloudflare hosting</span>
@@ -1559,7 +1577,7 @@ footer {
       </div>
     </div>
 
-    <div class="svc-row">
+    <div class="svc-row" data-page="contact" role="button" tabindex="0">
       <div class="svc-num">04</div>
       <div class="svc-content">
         <h2 class="svc-name">Monthly Maintenance</h2>
