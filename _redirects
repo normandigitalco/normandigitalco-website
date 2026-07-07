@@ -1,1 +1,3 @@
-/*    /index.html    200
+# No longer needed: real pages now exist as actual files/folders,
+# so no rewrites are required for /, /about, /services, /pricing, or /contact.
+# Keep this file only if you add real redirects later (e.g. an old URL moving).

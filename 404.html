@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Page not found — Norman Digital</title>
+<meta name="robots" content="noindex, follow">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=DM+Sans:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=DM+Sans:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap"></noscript>
+<link rel="stylesheet" href="/styles.css">
+<style>
+.error-wrap {
+  min-height: calc(100vh - 68px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 2.5rem;
+}
+.error-code {
+  font-family: var(--display);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 1.25rem;
+}
+.error-wrap h1 {
+  font-family: var(--serif);
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  color: var(--black);
+  margin-bottom: 1rem;
+}
+.error-wrap p {
+  font-size: 1rem;
+  color: var(--gray-600);
+  font-weight: 300;
+  max-width: 420px;
+  margin-bottom: 2rem;
+  line-height: 1.7;
+}
+</style>
+</head>
+<body>
+
+<nav id="main-nav">
+  <a href="/" class="nav-logo">
+    <div class="nav-logo-icon">
+      <svg viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <line x1="4" y1="18" x2="4" y2="4" stroke="white" stroke-width="2.5" stroke-linecap="square"/>
+        <line x1="4" y1="4" x2="18" y2="18" stroke="white" stroke-width="2.5" stroke-linecap="square"/>
+        <line x1="18" y1="18" x2="18" y2="4" stroke="white" stroke-width="2.5" stroke-linecap="square"/>
+        <rect x="14.5" y="2.5" width="4" height="4" fill="#3B82F6"/>
+      </svg>
+    </div>
+    <span class="nav-logo-name">Norman <span>Digital</span></span>
+  </a>
+</nav>
+
+<div class="error-wrap">
+  <p class="error-code">404 &middot; Page not found</p>
+  <h1>This page doesn&apos;t exist.</h1>
+  <p>The page you&apos;re looking for may have moved or been renamed. Let&apos;s get you back on track.</p>
+  <a href="/" class="btn-primary">Back to home</a>
+</div>
+
+</body>
+</html>
